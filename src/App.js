@@ -14,7 +14,7 @@ function App() {
       </nav>
 
       <Switch>
-        <Route path="/login" exact>
+        <Route path="/logins" exact>
           <Loginpage />
         </Route>
         <Route path="/home" exact>
