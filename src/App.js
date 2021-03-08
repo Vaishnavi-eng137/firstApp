@@ -9,24 +9,24 @@ import { BrowserRouter, Switch, Route, Router } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <nav class="navbar navbar-inverse bg-light">
+      <nav className="navbar navbar-inverse bg-light">
         <img src={cube} width="40" height="30px" alt=""></img>
       </nav>
+      <a href="/.netlify/functions/weather"></a>
 
       <Switch>
-        <Route path="/logins" exact>
+        <Route path="/login" exact>
           <Loginpage />
         </Route>
         <Route path="/home" exact>
-           <Welcomepage/>
-          </Route>
-       
+          <Welcomepage />
+        </Route>
         <Route path="/india" exact>
-          <Internalpage /> 
-          </Route> 
+          <Internalpage />
+        </Route>
         <Route path="/state/:id" exact>
-           <State1 /> 
-          </Route>
+          <State1 />
+        </Route>
       </Switch>
 
       {/* <Loginpage /> */}
