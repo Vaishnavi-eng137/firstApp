@@ -4,8 +4,20 @@ import Btncomp from "../components/btncomp";
 import Listcomp from "../components/listcomp";
 import Image from "../images/map.png";
 import Jumbotron from "../components/jumbotroncomp";
+import state1 from "./state1"
+import  {States}  from "../tr";
 
 function Internalpage() {
+
+  const handleRoute1Change=(stateID)=>{
+  window.location.href=`/state/${stateID}`
+  
+  }
+
+ const handleRoute2Change = (stid) =>{
+   window.location.href = `/state/${stid}`
+ }
+
   return (
     <div>
       <Jumbotron
@@ -24,12 +36,23 @@ function Internalpage() {
         </div>
         <div className="box2">
           <h3>States</h3>
+          {States.map((state,index)=>{
+            if(index<28){
+            return <li style={{cursor:'pointer'}} onClick={()=>handleRoute1Change(state.id)}>{state.name}</li>}
+          })}
+          
         </div>
         <div className="box2">
           <h3>Union Territories</h3>
+          {States.map((state,index)=>{
+            if(index>=28){
+            return <li onClick={()=>handleRoute2Change(state.id)}>{state.name}</li>}
+          })}
         </div>
       </div>
     </div>
   );
 }
+
+
 export default Internalpage;

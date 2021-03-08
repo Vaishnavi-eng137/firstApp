@@ -1,16 +1,17 @@
 import React from "react";
 import "../App.css";
 import Btncomp from "../components/btncomp";
+import internalPage from "./intpage"
 
 function Welcomepage() {
   return (
     <div>
       <div className="jumbotron bg-success text-white">
         <div className="container">
-          <h1 class="display-4">"Welcome to CubeWorld"</h1>
+          <h1 className="display-4">"Welcome to CubeWorld"</h1>
           <h4>
             "A platform for someone who wants to know about Indian
-            states,cultures & many more"
+            states,cultures & many more."
           </h4>
         </div>
       </div>
@@ -18,7 +19,7 @@ function Welcomepage() {
       <div className="card-deck ">
       <div className="card1">
         <div className="CC1">
-        <Btncomp className="btn" text="STUDY"color="btn-light"></Btncomp>
+        <Btncomp className="btn" text="STUDY"color="btn-light" onClick ={studyController}></Btncomp>
         </div>
         <div>
         <p>Let us study together about "INDIA".Reading textbooks may not be fun, but being able to is important. Understanding how to read and use them effectively is key to academic success.
@@ -48,6 +49,10 @@ function Welcomepage() {
       </div>
     </div>
   );
+}
+
+const studyController = ()=>{
+  window.location="/india"
 }
 
 export default Welcomepage;
